@@ -1,0 +1,37 @@
+<hyperparameters>
+
+	<train>0</train>                                     <!--0 if starting from the struct_vaegan, 1 if starting from final_gan but never trained it, 2 if starting from final_gan but trained it before-->
+	<save></save>                                        <!--path where to save the training data-->
+	<load></load>					              	     <!--path where to load pth file--> 	
+
+	<struct_vaegan>
+		<sample_points>800</sample_points>               <!--number of points for the complete point clouds-->
+		<blueprint_points>32</blueprint_points>          <!--number of points for the structural point clouds-->
+		<clamp_num>0.01</clamp_num>			             <!--number used to clip the weights of the discriminator-->
+		<gen_training_ratio>3</gen_training_ratio>       <!--ratio of training batches which train the vae-generator as well.  Given that the number of batches is N then the vae-generator is trained on N/gen_training_ratio batches-->
+		<k_means_init>k-means++</k_means_init>           <!--initialisation mode for the k-means algorithm-->
+		<k_means_iter>1</k_means_iter>                   <!--number of iterations of the k-means algorithm-->
+		<batch_size>16</batch_size>                      <!--size of each training batch-->
+		<dimensionality>3</dimensionality>		         <!--dimensionality of the points in the point cloud-->
+		<d_learning_rate>0.01</d_learning_rate>		     <!--learning rate to be used in the discriminator optimizers-->
+        <enc_learning_rate>0.01</enc_learning_rate>      <!--learning rate to be used in the encoder optimizers-->   
+		<g_learning_rate>0.01</g_learning_rate>          <!--learning rate to be used in the generator optimizer-->
+		<start_epochs>0</start_epochs>                   <!--initial epoch number-->
+		<end_epochs>200</end_epochs>                      <!--end epoch number-->
+		<n_classes>10</n_classes>                        <!--number classes in the trainining set-->                         
+	</struct_vaegan>
+
+	<final_gan>
+		<sample_points>800</sample_points>               <!--number of points for the complete point clouds-->
+		<clamp_num>0.01</clamp_num>			             <!--number used to clip the weights of the discriminator-->
+		<gen_training_ratio>3</gen_training_ratio>       <!--ratio of training batches which train the vae-generator as well.  Given that the number of batches is N then the vae-generator is trained on N/gen_training_ratio batches-->
+		<batch_size>16</batch_size>                      <!--size of each training batch-->
+		<dimensionality>3</dimensionality>		         <!--dimensionality of the points in the point cloud-->
+		<d_learning_rate>0.01</d_learning_rate>		     <!--learning rate to be used in the discriminator optimizers-->
+		<g_learning_rate>0.01</g_learning_rate>          <!--learning rate to be used in the generator optimizer-->
+		<start_epochs>0</start_epochs>                   <!--initial epoch number-->
+		<end_epochs>200</end_epochs>                      <!--end epoch number-->
+		<n_classes>10</n_classes>                        <!--number classes in the trainining set-->
+	</final_gan>			
+
+</hyperparameters>
