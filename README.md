@@ -1,2 +1,2 @@
 # Bachelor-Disseration
-:school: University of Southampton - Individual Project (COMP32000) - 2021/2022
+This repository contains both Report and Source code for the **COMP32000-Individual Project** dissertation
